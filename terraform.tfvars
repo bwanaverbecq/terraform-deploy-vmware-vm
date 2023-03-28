@@ -1,41 +1,33 @@
 # Provider
-provider_vsphere_host     = "vcsa01-z67.sddc.lab"
+provider_vsphere_host     = "vcsa.asgard.local"
 provider_vsphere_user     = "administrator@vsphere.local"
-provider_vsphere_password = "VMware1!"
+provider_vsphere_password = "#Berliner59"
 
 # Infrastructure
-deploy_vsphere_datacenter = "MGMT-Z67"
-deploy_vsphere_cluster    = "CL01-Z67"
-deploy_vsphere_datastore  = "vsanDatastore"
-deploy_vsphere_folder     = "/kubernetes"
-deploy_vsphere_network    = "PG-10.67.11.0"
+deploy_vsphere_datacenter = ""
+deploy_vsphere_cluster    = "c6220"
+deploy_vsphere_datastore  = "NetApp01_VMW03"
+deploy_vsphere_folder     = "LAB"
+deploy_vsphere_network    = "VM Network"
 
 # Guest
-guest_name_prefix     = "k8s-prod"
-guest_template        = "packer-ubuntu-18.04"
+guest_name_prefix     = "LAB"
+guest_template        = "CentOS7"
 guest_vcpu            = "1"
 guest_memory          = "1024"
 guest_ipv4_netmask    = "24"
-guest_ipv4_gateway    = "10.67.11.254"
-guest_dns_servers     = "10.67.10.5"
-guest_dns_suffix      = "sddc.lab"
-guest_domain          = "sddc.lab"
-guest_ssh_user        = "packer"
-guest_ssh_password    = "VMware1!"
-guest_ssh_key_private = "~/.ssh/id_ed25519"
-guest_ssh_key_public  = "~/.ssh/id_ed25519.pub"
+guest_ipv4_gateway    = "192.168.1.254"
+guest_dns_servers     = "192.168.1.250"
+guest_dns_suffix      = "lab.asgard.local"
+guest_domain          = "lab.asgard.local"
+guest_ssh_user        = "root"
+guest_ssh_password    = "berlin"
+guest_ssh_key_private = "~/.ssh/id_rsa"
+guest_ssh_key_public  = "~/.ssh/id_rsa.pub"
 
 # Master(s)
-master_ips = {
-  "0" = "10.67.11.11"
-  "1" = "10.67.11.12"
-  "2" = "10.67.11.13"
-}
-
-# Worker(s)
-worker_ips = {
-  "0" = "10.67.11.21"
-  "1" = "10.67.11.22"
-  "2" = "10.67.11.23"
-  "3" = "10.67.11.24"
+ips = {
+  "0" = "192.168.1.190"
+  "1" = "192.168.1.191"
+  "2" = "192.168.1.192"
 }

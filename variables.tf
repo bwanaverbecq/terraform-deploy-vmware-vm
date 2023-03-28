@@ -97,7 +97,7 @@ variable "guest_ssh_key_public" {
 ##### Master(s)
 # - Describes master(s) nodes options
 
-variable "master_ips" {
+variable "ips" {
   type        = map(any)
   description = "List of IPs used for the kubernetes master nodes. 1 IP for a single master, or 3 for a multi-master configuration."
 }
@@ -105,7 +105,7 @@ variable "master_ips" {
 ##### Worker(s)
 # - Describes workers(s) nodes (a.k.a., minions) options
 
-variable "worker_ips" {
-  type        = map(any)
-  description = "List of IPs used for the kubernetes worker nodes."
-}
+# variable "worker_ips" {
+#   type        = map(any)
+#   description = "List of IPs used for the kubernetes worker nodes."
+# }
